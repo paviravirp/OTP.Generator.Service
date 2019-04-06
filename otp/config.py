@@ -1,0 +1,34 @@
+#database
+
+DATABASE = 'OTP_Generation'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:db123@localhost:5432/' + DATABASE
+DEBUG = False
+
+#constants
+
+MAXIMUM_RETRIES = 10
+MAXIMUM_REQUEST_INTERVAL = 120
+PASSWORD_EXPIRY_TIME = 150
+
+#celery
+
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+
+#twilio
+
+TWILIO_SID = 'AC36304569aad81d99cab9eabefc31d44a'
+TWILIO_AUTH_TOKEN = '5189d4033d5a0a13fc555245ded838ed'
+TWILIO_PHONE_NUMBER = '+19285506112'
+
+
+#email
+
+MAIL_SERVER='smtp.googlemail.com'
+MAIL_PORT=465
+MAIL_USE_TLS = False
+MAIL_USE_SSL=True
+MAIL_USERNAME = 'pavi.ravirp21@gmail.com'
+MAIL_PASSWORD = 'sms/abc/123/@'

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing</title>
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script type = "text/javascript">
+	function generate() {
+			$.ajax({
+				url:'http://localhost:5000/generate/',
+				method:"POST",
+				type:"POST",
+				dataType:'jsonp',
+				jsonp: false,
+				headers:{
+					'Authorization':'abcd_123',
+					'Access-Control-Allow-Origin' : '*',
+					'Access-Control-Allow-Headers' : 'Authorization',
+					'Content-Type':'application/json'
+				},
+				data: JSON.stringify({
+					id:'1234',
+					param:'login',
+					phone_no:'+919944156758'
+				}),
+				
+				success: function(data){
+					var $msg = $('<h1>').text(data);
+					$('#info')
+            			.append($msg)
+				}
+			});
+		}
+
+</script>	
+
+Authorization token		:<input type = "text" id = "auth_token" name = "token"><br><br>
+Param 					:<input type = "text" id = "param" name = "param"><br><br>
+Phone Number			:<input type = "text" id = "phone_num" name = "num"><br><br>
+<button onclick="generate()">Click to load</button>
+
+<p id = "info"></p>
+</body>
+</html>
